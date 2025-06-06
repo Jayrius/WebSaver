@@ -1,0 +1,233 @@
+body {
+    background: #f8f9fa;
+  }
+  
+  #sidebar {
+    min-height: 100vh;
+  }
+  
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+  }
+  
+  .card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .folder-card {
+    border: 2px solid #0d6efd;
+    cursor: pointer;
+  }
+  
+  .folder-card:hover {
+    background-color: #e7f1ff;
+  }
+  
+  .tag-badge {
+    margin-right: 0.3rem;
+    font-size: 0.8rem;
+  }
+  
+  .btn-add-folder {
+    animation: pulse 2s infinite;
+  }
+  
+  /* Pulse animation for Add to Folder button */
+  @keyframes pulse {
+    0%, 100% {
+      box-shadow: 0 0 8px rgba(13, 110, 253, 0.7);
+    }
+    50% {
+      box-shadow: 0 0 16px rgba(13, 110, 253, 1);
+    }
+  }
+  
+  /* Glow animation for all buttons */
+  .btn-glow {
+    animation: glow 2s infinite;
+    box-shadow: 0 0 6px #0d6efd;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .btn-glow:hover, .btn-glow:focus {
+    box-shadow: 0 0 12px #0d6efd, 0 0 20px #0d6efd;
+    outline: none;
+  }
+  
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 6px #0d6efd;
+    }
+    50% {
+      box-shadow: 0 0 14px #0d6efd;
+    }
+  }
+  
+  /* Rainbow Gradient Text with glow animation */
+  .rainbow-glow {
+    font-weight: 900;
+    font-size: 3rem;
+    background: linear-gradient(90deg, #1E90FF, #4B0082);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px white;
+    text-stroke: 1px white;
+    filter: drop-shadow(0 0 8px rgba(30, 144, 255, 0.7));
+    cursor: default;
+    transition: filter 0.3s ease;
+  }
+  
+  .rainbow-glow:hover {
+    filter: drop-shadow(0 0 18px rgba(30, 144, 255, 1));
+  }
+  
+  #search-container {
+    max-width: 600px;
+    margin: 1rem auto;
+  }
+  
+/* ====== AI Chat Widget Styles ====== */
+
+#aiToggleBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #0d6efd;
+  border: none;
+  color: white;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1100;
+  transition: background-color 0.3s ease;
+}
+
+#aiToggleBtn:hover {
+  background-color: #084ecf;
+}
+
+#aiChatBox {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 320px;
+  max-height: 400px; /* increased from 400px */
+  height: 600px; /* added explicit height */
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  color: #212529;
+  z-index: 1099;
+}
+
+
+#aiMessages {
+  flex-grow: 1;
+  padding: 12px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #adb5bd transparent;
+  background-color: #f8f9fa;
+}
+
+#aiMessages::-webkit-scrollbar {
+  width: 6px;
+}
+
+#aiMessages::-webkit-scrollbar-thumb {
+  background-color: #adb5bd;
+  border-radius: 3px;
+}
+
+.ai-message {
+  max-width: 80%;
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  border-radius: 20px;
+  line-height: 1.4;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.ai-message-user {
+  background-color: #0d6efd;
+  color: white;
+  margin-left: auto;
+  text-align: right;
+}
+
+.ai-message-bot {
+  background-color: #e9ecef;
+  color: #212529;
+  margin-right: auto;
+  text-align: left;
+}
+
+#aiForm {
+  display: flex;
+  padding: 10px 12px;
+  border-top: 1px solid #ddd;
+  background-color: #fff;
+}
+
+#aiInput {
+  flex-grow: 1;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 14px;
+  outline-offset: 2px;
+  transition: border-color 0.3s ease;
+}
+
+#aiInput:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 6px rgba(13, 110, 253, 0.5);
+}
+
+#aiForm button {
+  background-color: #0d6efd;
+  border: none;
+  color: white;
+  padding: 0 16px;
+  margin-left: 8px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#aiForm button:hover {
+  background-color: #084ecf;
+}
+
+/* Responsive tweaks */
+@media (max-width: 576px) {
+  #aiChatBox {
+    width: 90vw;
+    bottom: 80px;
+    right: 5vw;
+    max-height: 350px;
+  }
+
+  #aiToggleBtn {
+    bottom: 15px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+}
